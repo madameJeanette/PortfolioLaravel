@@ -1,11 +1,13 @@
-
-    <!doctype html>
+<!doctype html>
 <html>
     <head>
     <link rel="stylesheet" href= "{{asset('css/app.css')}}">
-    <title>{{config('app.name', 'PortfolioApp')}}</title>
+     <title></title>
       </head>
-    <body>
-   @yield('content')
+     <body>
+       @include('inc.navbar')
+       <div class= "container">
+         @yield('content')
+       </div>
     </body>
-    </html>
+</html>
