@@ -2,7 +2,7 @@
 
 @section('content')
 
-   <h1>Welkom op de portfolio website van Esther.</h1>
+<h1>{{$title}}</h1>
    <p> plaatjessssS</p>
  
 @endsection
