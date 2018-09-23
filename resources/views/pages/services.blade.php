@@ -3,11 +3,11 @@
     <html>
     <head>
     <title>{{config('app.name', 'PortfolioApp')}}</title>
-    <meta name="about" content="about page">
+    <meta name="services" content="services pagina">
 
     </head>
     <body>
-   <h1>About</h1>
-   <p> blabla</p>
+   <h1>Services</h1>
+   <p> This is the services page.</p>
     </body>
     </html>

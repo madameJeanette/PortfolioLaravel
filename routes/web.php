@@ -12,8 +12,6 @@
 */
 
 
-Route::get('/about', function () {
-    return view('pages.about');
-});
-
 Route::get('/', 'PagesController@index');
+Route::get('/public/about', 'PagesController@about');
+Route::get('/public/services', 'PagesController@services');
