@@ -15,7 +15,7 @@ class CreateArtsTable extends Migration
     {
         Schema::create('arts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('picture');
+            $table->mediumtext('picture');
             $table->timestamps();
         });
     }
