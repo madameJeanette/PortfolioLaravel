@@ -13,7 +13,8 @@ class ArtsController extends Controller
      */
     public function index()
     {
-        //
+        //show page
+        return view('arts.index');
     }
 
     /**
