@@ -6,6 +6,7 @@
  @foreach($arts as $art)
  <div class = "well">
     <h3>{{$art->picture}}</h3>
+ <small> uploaded:{{$art->created_at}}</small>
  </div>
 
  @endforeach
