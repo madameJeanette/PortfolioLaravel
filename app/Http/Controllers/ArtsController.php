@@ -15,8 +15,8 @@ class ArtsController extends Controller
     public function index()
     {
         //show page
-        return Art::all();
-        return view('arts.index');
+        $arts = Art::all();
+        return view('art.index')->with('arts', $arts);
     }
 
     /**
