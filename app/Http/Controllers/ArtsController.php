@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Art;
 
 class ArtsController extends Controller
 {
@@ -14,7 +15,8 @@ class ArtsController extends Controller
     public function index()
     {
         //show page
-        return view('art.index');
+        return Art::all();
+        return view('arts.index');
     }
 
     /**
