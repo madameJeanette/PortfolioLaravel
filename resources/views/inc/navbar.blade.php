@@ -1,13 +1,16 @@
 <nav class="navbar navbar-dark bg-dark">
 <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" href="/">{{config('app.name', 'PortfolioApp')}}</a>
+          <a class="nav-link active" href="/">{{config('app.name', 'Portfolio')}}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+            <a class="nav-link" href="/arts">Recente werken</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/services">Services</a>
