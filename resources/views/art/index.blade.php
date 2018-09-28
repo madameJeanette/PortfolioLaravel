@@ -11,6 +11,7 @@
  </div>
 
  @endforeach
+ 
 @else
 <p> Geen afbeeldingen gevonden....</p>
 @endif
