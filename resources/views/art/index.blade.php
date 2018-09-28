@@ -2,7 +2,7 @@
 
 @section('content')
 <h1> Recente werken. </h1>
-@if(count($arts)>1)
+@if(count($arts)>0)
  @foreach($arts as $art)
   <div class = "well">
   <h3> <a href="/arts/{{$art->id}}">{{$art->name}}</a><h3>
