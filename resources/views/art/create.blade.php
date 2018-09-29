@@ -2,9 +2,11 @@
 
 @section('content')
 <br>
-<h1> Upload nieuwe werken. </h1>
+<h1> Publiceer nieuwe werken. </h1>
 <hr>
-<form>
+<form method = "POST" action ="/arts">
+    @csrf
+   
     <div class="form-group">
         <label for="exampleInputFile"><h4>Naam werk</h4></label>
         <input type="text" class="form-control" placeholder="Schattige panda.">
@@ -15,7 +17,7 @@
       <input type="file" id="exampleInputFile">
     </div>
   
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-primary">Publiceer</button>
   </form>
 
 
