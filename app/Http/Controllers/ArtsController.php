@@ -37,7 +37,28 @@ class ArtsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //new post
+     $art = new Art;
+       
+        //post name and picture
+    //    $art->name = request('name');
+    //    $art->picture = request('picture');
+       
+
+    //    $art->save();
+        //save in db
+
+        
+        
+        
+        Art::create([
+          'name' => request('name'),
+          'picture' => request('picture')
+
+        ]);
+        
+        //redirect to homepage
+        return redirect('/');
     }
 
     /**
