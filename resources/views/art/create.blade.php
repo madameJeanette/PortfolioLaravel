@@ -11,7 +11,6 @@
     <div class="form-group">
       <label for="exampleInputFile">Upload werk</label>
       <input type="file" id="exampleInputFile">
-      <p class="help-block">Example block-level help text here.</p>
     </div>
   
     <button type="submit" class="btn btn-default">Submit</button>
