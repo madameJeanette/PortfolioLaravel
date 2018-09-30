@@ -15,8 +15,8 @@ class ArtsController extends Controller
     public function index()
     {
         //show page
-        $arts = Art::all();
-        return view('art.index')->with('arts', $arts);
+        $art = Art::all();
+        return view('art.index')->with('arts', $art);
     }
 
     /**
@@ -38,25 +38,11 @@ class ArtsController extends Controller
     public function store(Request $request)
     {
         //new post
-     $art = new Art;
+        $art = new Art;
        
-        //post name and picture
-    //    $art->name = request('name');
-    //    $art->picture = request('picture');
-       
+        //post name and picture     
 
-    //    $art->save();
-        //save in db
 
-        
-        
-        
-        Art::create([
-          'name' => request('name'),
-          'picture' => request('picture')
-
-        ]);
-        
         //redirect to homepage
         return redirect('/');
     }
@@ -69,7 +55,8 @@ class ArtsController extends Controller
      */
     public function show($id)
     {
-        //
+        $art = Art::find($id);
+       return view('art.show')->with('art',$art);
     }
 
     /**

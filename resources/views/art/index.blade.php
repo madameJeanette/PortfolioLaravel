@@ -6,7 +6,7 @@
  @foreach($arts as $art)
   <div class = "well">
   <h3> <a href="/arts/{{$art->id}}">{{$art->name}}</a><h3>
-  <img src="img/{{$art->picture }}" /><br>
+  <img src="\img\{{$art->picture }}" /><br>
   <small> uploaded:{{$art->created_at}}</small>
  </div>
 

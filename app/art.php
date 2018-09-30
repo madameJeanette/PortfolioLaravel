@@ -11,7 +11,6 @@ protected $table = 'arts';
 // Primary key
 public $primaryKey = 'id';
 //Timestamps
-//public $timestamps = true;
-
-protected $fillable = ['name', 'picture'];
+//public $timestamps = true; 
+// protected $fillable = ['name', 'picture'];
 }

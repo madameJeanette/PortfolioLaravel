@@ -15,6 +15,5 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('arts/create', 'ArtsController@create');
-Route::post('arts', 'ArtsController@store');
+
 Route::resource('arts', 'Artscontroller');
