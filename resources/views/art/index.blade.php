@@ -11,7 +11,7 @@
  </div>
 
  @endforeach
- 
+ {{$arts->links()}}
 @else
 <p> Geen afbeeldingen gevonden....</p>
 @endif

@@ -15,7 +15,7 @@ class ArtsController extends Controller
     public function index()
     {
         //show page
-        $art = Art::all();
+        $art = Art::orderBy('created_at','desc')->paginate(5);
         return view('art.index')->with('arts', $art);
     }
 
@@ -44,7 +44,7 @@ class ArtsController extends Controller
 
 
         //redirect to homepage
-        return redirect('/');
+        return redirect('/arts');
     }
 
     /**
