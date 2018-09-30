@@ -39,18 +39,20 @@ class ArtsController extends Controller
     {
 
         //validate
-        $this->validate($request = [
-            'name'=> 'required',
-            'picture'=>'required'
-        ]);
+        $validatedData = $request->validate([
+            'name' => 'required|unique:posts|max:255',
+            'picture' => 'required',
+
+            ]);
+    // The blog post is valid...
         //new post
-        $art = new Art;
+        //$art = new Art;
        
           
        
 
         //redirect to homepage
-        return redirect('/arts');
+        //return redirect('/arts');
     }
 
     /**
