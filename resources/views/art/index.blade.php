@@ -2,6 +2,7 @@
 
 @section('content')
 <h1> Recente werken. </h1>
+<a class="btn btn-primary" href="/arts/create" role="button">Upload</a>
 @if(count($arts)>0)
  @foreach($arts as $art)
   <div class = "well">

@@ -40,7 +40,7 @@ class ArtsController extends Controller
 
         //validate
         $validatedData = $request->validate([
-            'name' => 'required|unique:posts|max:255',
+            'name' => 'required|unique:arts|max:255',
             'picture' => 'required',
 
             ]);

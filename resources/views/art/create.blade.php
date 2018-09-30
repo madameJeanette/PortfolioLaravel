@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-<br>
+
 <h1> Publiceer nieuwe werken. </h1>
 <hr>
 @if ($errors->any())
@@ -27,7 +27,7 @@
     </div>
   
     <button type="submit" class="btn btn-primary">Publiceer</button>
+    <a class="btn btn-default" href="/arts" role="button">Ga terug</a>
   </form>
-
-
+ 
 @endsection
