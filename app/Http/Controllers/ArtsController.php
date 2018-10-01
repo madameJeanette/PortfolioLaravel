@@ -41,11 +41,13 @@ class ArtsController extends Controller
             'picture' => 'required',
              'name' => 'required'
         ]);
-        //new post
-       return 123;
+       //create art
+       $art = new Art;
+       $post->name = $request->input('name');
+       $post->picture = $request->input('picture');
+       $post->save();
 
-        //redirect to homepage
-        
+       return redirect('/arts')->with('succes', 'Post created');
     }
 
     /**
