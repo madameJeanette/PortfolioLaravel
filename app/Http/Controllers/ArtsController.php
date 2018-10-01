@@ -15,7 +15,7 @@ class ArtsController extends Controller
     public function index()
     {
         //show page
-        $art = Art::orderBy('created_at','desc')->paginate(5);
+        $arts = Art::latest()->paginate(5);
         return view('art.index')->with('arts', $art);
     }
 
@@ -38,21 +38,15 @@ class ArtsController extends Controller
     public function store(Request $request)
     {
 
-        //validate
-        $validatedData = $request->validate([
-            'name' => 'required|unique:arts|max:255',
-            'picture' => 'required',
-
-            ]);
-    // The blog post is valid...
         //new post
-        //$art = new Art;
-       
-          
+        $art = new Art;
+        $art->picture = $request->input('picture');
+        $art->name = $request->input('name');
+        $art->save(); 
        
 
         //redirect to homepage
-        //return redirect('/arts');
+        return redirect('/arts')->with('succes', 'Post created');
     }
 
     /**
