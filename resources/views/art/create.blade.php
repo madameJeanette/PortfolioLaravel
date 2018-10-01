@@ -13,7 +13,7 @@
  
  <div class='form-group'>
         {{Form::label('picture', 'Bestand')}}
-        {{Form::file('image')}}
+        {{Form::file('picture')}}
       
  </div>  
  {{Form::submit('Publiceer', ['class'=> 'btn btn-primary'])}}

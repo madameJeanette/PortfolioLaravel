@@ -43,9 +43,9 @@ class ArtsController extends Controller
         ]);
        //create art
        $art = new Art;
-       $post->name = $request->input('name');
-       $post->picture = $request->input('picture');
-       $post->save();
+       $art->name = $request->input('name');
+       $art->picture = $request->input('picture');
+       $art->save();
 
        return redirect('/arts')->with('succes', 'Post created');
     }
@@ -70,7 +70,8 @@ class ArtsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $art = Art::find($id);
+        return view('art.edit')->with('art',$art);
     }
 
     /**

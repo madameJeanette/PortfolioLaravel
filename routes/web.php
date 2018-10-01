@@ -19,3 +19,4 @@ Route::get('/services', 'PagesController@services');
 Route::resource('arts', 'Artscontroller');
 
 Route::post('arts/create', 'ArtsController@store');
+Route::post('arts/edit', 'ArtsController@update');

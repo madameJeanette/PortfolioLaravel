@@ -9,4 +9,6 @@
  </div>
  <hr>
  <small> uploaded:{{$art->created_at}}</small>
-@endsection
+ <hr>
+<a href="/arts/{{$art->id}}/edit" class="btn btn-default">Edit</a>
+ @endsection
