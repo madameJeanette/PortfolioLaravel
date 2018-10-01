@@ -16,7 +16,7 @@ class ArtsController extends Controller
     {
         //show page
         $arts = Art::latest()->paginate(5);
-        return view('art.index')->with('arts', $art);
+        return view('art.index')->with('arts', $arts);
     }
 
     /**
@@ -39,14 +39,10 @@ class ArtsController extends Controller
     {
 
         //new post
-        $art = new Art;
-        $art->picture = $request->input('picture');
-        $art->name = $request->input('name');
-        $art->save(); 
        
 
         //redirect to homepage
-        return redirect('/arts')->with('succes', 'Post created');
+        
     }
 
     /**
