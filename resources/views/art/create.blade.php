@@ -15,6 +15,7 @@
         {{Form::label('picture', 'Bestand')}}
         {{Form::file('image')}}
       
-       </div>  
+ </div>  
+ {{Form::submit('Publiceer', ['class'=> 'btn btn-primary'])}}
 {!! Form::close() !!}
 @endsection
