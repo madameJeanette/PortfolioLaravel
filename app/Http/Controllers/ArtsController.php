@@ -37,9 +37,12 @@ class ArtsController extends Controller
      */
     public function store(Request $request)
     {
-
+        $this->validate($request,[
+            'picture' => 'required',
+             'name' => 'required'
+        ]);
         //new post
-       
+       return 123;
 
         //redirect to homepage
         

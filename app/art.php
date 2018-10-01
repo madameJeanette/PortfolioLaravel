@@ -12,5 +12,5 @@ protected $table = 'arts';
 public $primaryKey = 'id';
 
 //required fields
-protected $fillable = ['picture', 'name'];
+//protected $fillable = ['picture', 'name'];
 }
