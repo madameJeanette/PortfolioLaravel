@@ -106,6 +106,9 @@ class ArtsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Art::find($id);
+        $art->delete();
+
+        return redirect('/arts')->with('succes', 'Post deleted');
     }
 }

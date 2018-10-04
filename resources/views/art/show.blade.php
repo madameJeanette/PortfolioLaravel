@@ -11,7 +11,7 @@
  <small> uploaded:{{$art->created_at}}</small>
  <hr>
 <a href="/arts/{{$art->id}}/edit/" class="btn btn-default">Edit</a>
-{!!Form::open(['action'=> ['ArtsController@destroy', $art->id],'method'=>'POST','class'=> 'pull-right' ])!!}
+{!!Form::open(['action'=> ['ArtsController@destroy', $art->id],'method'=>'POST'])!!}
  {{Form::hidden('_method', 'DELETE')}}
  {{Form::submit('Delete', ['class'=> 'btn btn-danger'])}}
 {!!Form::close() !!}
