@@ -69,18 +69,9 @@ class ArtsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $this->validate($request,[
-            'picture' => 'required',
-             'name' => 'required'
-        ]);
-       //create art
-       $art = Art::find($id);
-       $art->name = $request->input('name');
-       $art->picture = $request->input('picture');
-       $art->save();
-
-       return redirect('/arts')->with('succes', 'Post updated');
+    {   
+        $art = Art::find($id);
+        return view('art.edit')->with('art',$art);
     }
 
     /**
@@ -92,7 +83,19 @@ class ArtsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $this->validate($request,[
+             'picture' => 'required',
+             'name' => 'required'
+        ]);
+            
+           //update art
+           $art = Art::find($id);
+           $art->name = $request->input('name');
+           $art->picture = $request->input('picture');
+           $art->save();
+    
+           return redirect('/arts')->with('succes', 'Post updated');
     }
 
     /**

@@ -7,13 +7,14 @@
 {!! Form::open(['action' => ['ArtsController@update', $art->id], 'method'=>'POST']) !!}
  <div class="form-group">
         {{Form::label('name', 'Titel')}}
-        {{Form::text('name', $art->name, ['class'=>'form-control', 'placeholder' => 'Titel werk'])}}
+        {{Form::text('name', $art->name, ['class'=>'form-control'])}}
 
  </div>  
  
  <div class='form-group'>
         {{Form::label('picture', 'Bestand')}}
-        {{Form::file('picture', $art->picture)}}
+        {{$art->picture}}
+        {{Form::file('picture')}}
       
  </div> 
  {{Form::hidden('_method','PUT')}} 
