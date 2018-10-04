@@ -18,3 +18,7 @@ Route::get('/services', 'PagesController@services');
 
 Route::resource('arts', 'ArtsController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
