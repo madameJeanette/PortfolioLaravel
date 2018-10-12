@@ -13,7 +13,6 @@
  @endforeach
  {{$arts->links()}}
 
- <a class="btn btn-primary" href="/arts/create" role="button">Upload</a>
 @else
 <p> Geen afbeeldingen gevonden....</p>
 @endif
