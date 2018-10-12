@@ -45,7 +45,9 @@ class ArtsController extends Controller
        $art = new Art;
        $art->name = $request->input('name');
        $art->picture = $request->input('picture');
+       $art->user_id = auth()->user()->id;
        $art->save();
+
 
        return redirect('/arts')->with('succes', 'Post created');
     }
