@@ -17,21 +17,26 @@
                             <h3> Jouw uploads.</h3>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Titel</th>
-                                    <th></th>
-                                    <th></th>
+                                    <td>Titel</td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 @foreach($arts as $art)
                                 <tr>
-                                        <th>{{$art->name}} </th>
-                                        <th> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="100" width="auto"/></th>
-                                        <th><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a></th>
-                                        <th><a href="/arts/{{$art->id}}/delete" class='btn btn-default'>Delete</a></th>
+                                        <td>{{$art->name}} </td>
+                                        <td> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="100" width="auto"/></td>
+                                        <td><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a></td>
+                                        <td>
+                                            {!!Form::open(['action'=> ['ArtsController@destroy',$art->id],'method'=>'POST'])!!}
+                                            {{Form::hidden('_method', 'DELETE')}} 
+                                            {{Form::submit('Delete', ['class'=> 'btn btn-danger'])}}
+                                            {!!Form::close() !!}</td>
+                                        
                                 </tr>
                                 @endforeach
                             </table>
                             @else
-                             <p>"You have no posts"</p>
+                             <p>"Je hebt nog geen afbeeldingen geupload"</p>
                         @endif
                         <a href="/arts/create" class="btn btn-primary">Upload</a>
                 </div>
