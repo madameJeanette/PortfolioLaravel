@@ -29,6 +29,6 @@ class User extends Authenticatable
     ];
 
     public function arts() {
-     return $this->hasMany('App/Art');
+     return $this->hasMany('App\Art');
     }
-}
+} 

@@ -13,8 +13,9 @@
                     </div>
                     @endif
                     <h3> Jouw kunst. <h3>
+                      @if(count($arts)>0)
                             <a href="/arts/create" class="btn btn-primary">Upload</a>
-                            <table class='table table-striped'>
+                            <table class="table table-striped">
                                 <tr>
                                     <th>Title </th>
                                     <th> </th>
@@ -23,11 +24,12 @@
                                 @foreach($arts as $art)
                                 <tr>
                                         <th>{{$art->title}} </th>
-                                        <th><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</th>
+                                        <th><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a></th>
                                         <th> </th>
                                     </tr>
                                 @endforeach
                             </table>
+                        @endif
                 </div>
             </div>
         </div>
