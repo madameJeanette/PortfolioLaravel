@@ -12,9 +12,9 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <a href="/arts/create" class="btn btn-primary">Upload kunst</a>
-                    <h3> Jouw kunst.
-                        <h3>
+                    <h3> Jouw kunst. <h3>
+                    <a href="/arts/create" class="btn btn-primary">Upload</a>
+                   
                 </div>
             </div>
         </div>
