@@ -17,7 +17,7 @@
                             <h3> Jouw uploads.</h3>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Titel </th>
+                                    <th>Titel</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -26,8 +26,8 @@
                                         <th>{{$art->name}} </th>
                                         <th> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="100" width="auto"/></th>
                                         <th><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a></th>
-                                        <th></th>
-                                    </tr>
+                                        <th><a href="/arts/{{$art->id}}/delete" class='btn btn-default'>Delete</a></th>
+                                </tr>
                                 @endforeach
                             </table>
                             @else
