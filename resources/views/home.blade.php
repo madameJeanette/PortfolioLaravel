@@ -12,9 +12,9 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <h3> Jouw kunst. <h3>
                       @if(count($arts)>0)
-                            <a href="/arts/create" class="btn btn-primary">Upload</a>
+                            
+                            <h3> Jouw uploads.</h3>
                             <table class="table table-striped">
                                 <tr>
                                     <th>Titel </th>
@@ -24,6 +24,7 @@
                                 @foreach($arts as $art)
                                 <tr>
                                         <th>{{$art->name}} </th>
+                                        <th> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="100" width="auto"/></th>
                                         <th><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a></th>
                                         <th></th>
                                     </tr>
@@ -32,6 +33,7 @@
                             @else
                              <p>"You have no posts"</p>
                         @endif
+                        <a href="/arts/create" class="btn btn-primary">Upload</a>
                 </div>
             </div>
         </div>
