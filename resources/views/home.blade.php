@@ -13,8 +13,21 @@
                     </div>
                     @endif
                     <h3> Jouw kunst. <h3>
-                    <a href="/arts/create" class="btn btn-primary">Upload</a>
-                   
+                            <a href="/arts/create" class="btn btn-primary">Upload</a>
+                            <table class='table table-striped'>
+                                <tr>
+                                    <th>Title </th>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                                @foreach($arts as $art)
+                                <tr>
+                                        <th>{{$art->title}} </th>
+                                        <th><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</th>
+                                        <th> </th>
+                                    </tr>
+                                @endforeach
+                            </table>
                 </div>
             </div>
         </div>

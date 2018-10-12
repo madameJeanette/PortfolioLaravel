@@ -13,4 +13,8 @@ public $primaryKey = 'id';
 
 //required fields
 //protected $fillable = ['picture', 'name'];
+
+public function user(){
+ return $this->belongsTo('App\User');
+ }
 }
