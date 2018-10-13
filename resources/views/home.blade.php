@@ -20,10 +20,11 @@
                                     <td>Titel</td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
                                 </tr>
                                 @foreach($arts as $art)
                                 <tr>
-                                        <td>{{$art->name}} </td>
+                                        <td>{{$art->name}}</td>
                                         <td> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="100" width="auto"/></td>
                                         <td><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a></td>
                                         <td>
