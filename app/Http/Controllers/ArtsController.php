@@ -82,8 +82,15 @@ class ArtsController extends Controller
      */
     public function edit($id)
     {   
-        $art = Art::find($id);
-        return view('art.edit')->with('art',$art);
+
+        
+       $art = Art::find($id);
+       // check for correct user
+       if(auth()->user()->id !==$art->user_id){
+          return redirect('/arts')->with('error','Unauthorized page');
+       }
+       return view('art.edit')->with('art',$art);
+
     }
 
     /**
@@ -119,6 +126,12 @@ class ArtsController extends Controller
     public function destroy($id)
     {
         $art = Art::find($id);
+        
+        //check for correct user
+        if(auth()->user()->id !==$art->user_id){
+            return redirect('/arts')->with('error','Unauthorized page');
+         }
+         
         $art->delete();
 
         return redirect('/arts')->with('succes', 'Post deleted');
