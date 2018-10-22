@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'customers',
     ],
 
     /*
@@ -45,12 +45,17 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
         'customer' => [
             'driver' => 'session',
             'provider' => 'customers',
          ],
-
-     ],
+        
+        'customer-api' => [
+            'driver' => 'token',
+            'provider' => 'customers',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -104,6 +109,11 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'customers' => [
+            'provider' => 'customers',
             'table' => 'password_resets',
             'expire' => 60,
         ],
