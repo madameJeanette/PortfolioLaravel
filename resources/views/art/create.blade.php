@@ -4,7 +4,7 @@
 
 <h1> Publiceer nieuwe werken. </h1>
 <hr>
-{!! Form::open(['action' => 'ArtsController@store', 'method'=>'POST']) !!}
+{!! Form::open(['action' => 'ArtsController@store', 'method'=>'POST', 'enctype'=> 'multipart/data' ]) !!}
  <div class="form-group">
        {{Form::label('name', 'Titel')}}
        {{Form::text('name', '', ['class'=>'form-control', 'placeholder' => 'Titel werk'])}}

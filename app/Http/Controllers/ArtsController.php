@@ -131,9 +131,9 @@ class ArtsController extends Controller
         if(auth()->user()->id !==$art->user_id){
             return redirect('/arts')->with('error','Unauthorized page');
          }
-         
+
         $art->delete();
 
         return redirect('/arts')->with('succes', 'Post deleted');
     }
-}
+} 
