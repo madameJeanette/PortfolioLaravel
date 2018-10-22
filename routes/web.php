@@ -21,7 +21,7 @@ Route::resource('arts', 'ArtsController');
 
 Auth::routes();
 
-Route::get('/customer', 'CustomersController@index');
+Route::get('/customer', 'CustomersController@index')->name('customer.dashboard');
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
 
 Route::prefix('admin')->group(function(){
