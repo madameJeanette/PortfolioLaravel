@@ -52,7 +52,7 @@
                               {{ __('Logout') }}
                         </a>
 
-                        <a class="dropdown-item" href="/home">Dashboard</a>
+                        <a class="dropdown-item" href="/customer">Dashboard</a>
                         
                         
                         

@@ -20,7 +20,13 @@ Route::resource('arts', 'ArtsController');
 
 
 Auth::routes();
-//Gate::resource();
+
 Route::get('/customer', 'CustomersController@index');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('admin.dashboard');
+
+Route::prefix('admin')->group(function(){
+    
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+});
 
