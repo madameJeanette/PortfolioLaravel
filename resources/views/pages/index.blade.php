@@ -6,3 +6,4 @@
     <p><a class="btn btn-primary btn-lg" href="/login" role="button">Login</a> <a class="btn btn-success btn-lg" href="/register"
             role="button">Registreer</a></p>
 @endsection
+
