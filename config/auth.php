@@ -38,22 +38,22 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'customers',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'customers',
         ],
 
-        'customer' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'customers',
+            'provider' => 'users',
          ],
         
-        'customer-api' => [
+        'admin-api' => [
             'driver' => 'token',
-            'provider' => 'customers',
+            'provider' => 'users',
         ],
     ],
 

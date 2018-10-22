@@ -21,5 +21,6 @@ Route::resource('arts', 'ArtsController');
 
 Auth::routes();
 //Gate::resource();
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/customer', 'CustomersController@index');
+Route::get('/home', 'HomeController@index')->name('home');
+
