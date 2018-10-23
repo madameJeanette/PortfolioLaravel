@@ -8,10 +8,13 @@ use Auth;
 
 class AdminLoginController extends Controller
 {
+    protected $redirectTo = "{{  route('admin.dashboard')}}";
+
     public function __construct()
     {
         $this->middleware('guest:admin', ['except' => ['logout']]);
     }
+   
     public function showLoginForm()
     {
        return view('auth.admin-login');

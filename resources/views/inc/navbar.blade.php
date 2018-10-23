@@ -54,16 +54,17 @@
 
                         @if(Auth::guard('admin')->check()) 
                         <a class="dropdown-item" href="{{  route('admin.dashboard')}}">Admin Dashboard</a>
-                        
-                        @else
-                        <a class="dropdown-item" href="{{  route('customer.dashboard')}}">Dashboard</a>                     
-                        @endif
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-
+                        <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                @csrf
                         </form>
-                    </div>
+                        @else
+                        <a class="dropdown-item" href="{{  route('customer.dashboard')}}">Dashboard</a>  
+                        <form id="logout-form" action="{{ route('customer.logout') }}" method="POST" style="display: none;">
+                                @csrf    
+                        </form>               
+                        @endif
+                        
+                          </div>
                 </li>
                 @endguest
             </ul>

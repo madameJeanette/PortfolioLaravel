@@ -22,10 +22,10 @@ Route::resource('arts', 'ArtsController');
 Auth::routes();
 
 Route::get('/customer', 'CustomersController@index')->name('customer.dashboard');
-Route::get('/customer/logout', 'Auth\LoginController@customerLogout')->name('customer.logout');
+Route::post('/customer/logout', 'Auth\LoginController@customerLogout')->name('customer.logout');
 
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
-Route::get('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+Route::post('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
 
 Route::prefix('admin')->group(function(){

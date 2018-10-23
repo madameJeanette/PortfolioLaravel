@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/customer';
+    protected $redirectTo = "{{  route('customer.dashboard')}}";
 
     /**
      * Create a new controller instance.
