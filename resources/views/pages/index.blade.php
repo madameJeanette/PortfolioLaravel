@@ -1,9 +1,20 @@
 @extends('layouts/app') 
 @section('content')
-<div class="jumbotron text-center">
+
     <h1>{{$title}}</h1>
     <p> Dit is mijn portfolio website.</p>
-    <p><a class="btn btn-primary btn-lg" href="/login" role="button">Login</a> <a class="btn btn-success btn-lg" href="/register"
-            role="button">Registreer</a></p>
+    <div class="card-body">
+            <div class='container'>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="panel">
+                            @component ('components.who')
+                            @endcomponent
+                            <p> 'U bent ingelogt als klant.' </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection
 

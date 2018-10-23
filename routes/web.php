@@ -22,11 +22,16 @@ Route::resource('arts', 'ArtsController');
 Auth::routes();
 
 Route::get('/customer', 'CustomersController@index')->name('customer.dashboard');
+Route::get('/customer/logout', 'Auth\LoginController@customerLogout')->name('customer.logout');
+
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
+Route::get('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+
 
 Route::prefix('admin')->group(function(){
     
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    
 });
 
