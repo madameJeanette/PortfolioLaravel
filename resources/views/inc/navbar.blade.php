@@ -52,10 +52,13 @@
                               {{ __('Logout') }}
                         </a>
 
-                        <a class="dropdown-item" href="/customer">Dashboard</a>
+                        @if(Auth::guard('admin')->check()) 
+                        <a class="dropdown-item" href="{{  route('admin.dashboard')}}">Admin Dashboard</a>
                         
-                        
-                        
+                        @else
+                        <a class="dropdown-item" href="{{  route('customer.dashboard')}}">Dashboard</a>                     
+                        @endif
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
 
