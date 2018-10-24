@@ -29,5 +29,16 @@ class Customer extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    
+    // app/Customer.php
 
-} 
+    /**
+     * Get all of favorite Art for the user.
+     */
+     public function favorites()
+     {
+    return $this->belongsToMany(Art::class, 'favorites', 'customer_id', 'art_id')->withTimeStamps();
+     }
+
+     } 

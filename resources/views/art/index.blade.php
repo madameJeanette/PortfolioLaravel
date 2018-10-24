@@ -11,7 +11,14 @@
   <small> geupload: {{$art->created_at}} door {{$art->user->name}}</small>
   
  </div>
- 
+ @if (Auth::check())
+    <div class="panel-footer">
+        <favorite
+            :art={{ $art->id }}
+            :favorited={{ $art->favorited() ? 'true' : 'false' }}
+        ></favorite>
+    </div>
+@endif
  @endforeach
  {{$arts->links()}}
 
@@ -19,6 +26,6 @@
 <p> Geen afbeeldingen gevonden....</p>
 @endif
 
-   
+  
 @endsection
 

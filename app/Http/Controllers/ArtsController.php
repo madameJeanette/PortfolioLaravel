@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Art;
+use Illuminate\Support\Facades\Auth;
 
 
 class ArtsController extends Controller
@@ -137,4 +138,31 @@ class ArtsController extends Controller
 
         return redirect('/home')->with('succes', 'Post deleted');
     }
+
+    
+    /**
+    * Favorite a particular art
+    *
+    * @param  Art $art
+    * @return Response
+    */
+    public function favoriteArt(Art $art)
+   {
+    Auth::user()->favorites()->attach($art->id);
+
+    return back();
+  } 
+
+   /**
+   * Unfavorite particular art
+   *
+   * @param  Art $art
+   * @return Response
+    */
+  public function unFavoriteArt(Art $art)
+  {
+    Auth::user()->favorites()->detach($art->id);
+
+    return back();
+ }
 } 
