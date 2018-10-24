@@ -60,7 +60,7 @@ class ArtsController extends Controller
        $art->save();
 
 
-       return redirect('/arts')->with('succes', 'Post created');
+       return redirect('/home')->with('succes', 'Post created');
     }
 
     /**
@@ -115,7 +115,7 @@ class ArtsController extends Controller
            $art->picture = $request->input('picture');
            $art->save();
     
-           return redirect('/arts')->with('succes', 'Post updated');
+           return redirect('/home')->with('succes', 'Post updated');
     }
 
     /**
@@ -135,6 +135,6 @@ class ArtsController extends Controller
 
         $art->delete();
 
-        return redirect('/arts')->with('succes', 'Post deleted');
+        return redirect('/home')->with('succes', 'Post deleted');
     }
 } 
