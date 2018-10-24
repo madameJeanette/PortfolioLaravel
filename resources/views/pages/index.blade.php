@@ -10,7 +10,7 @@
                         <div class="panel">
                             @component ('components.who')
                             @endcomponent
-                            <p> 'U bent ingelogt als klant.' </p>
+                            <p> Welkom </p>
                         </div>
                     </div>
                 </div>

@@ -17,5 +17,5 @@
       
  </div>  
  {{Form::submit('Publiceer', ['class'=> 'btn btn-primary'])}}
-{!! Form::close() !!}
+ {!! Form::close() !!}
 @endsection

@@ -10,14 +10,5 @@
 <hr>
 <small> geupload: {{$art->created_at}} door {{$art->user->name}}</small>
 <hr>
-@if(!Auth::guest())
- @if(Auth::user()->id== $art->user_id)
-   <a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a>
 
-   {!!Form::open(['action'=> ['ArtsController@destroy',$art->id],'method'=>'POST'])!!}
-   {{Form::hidden('_method', 'DELETE')}} 
-   {{Form::submit('Delete', ['class'=> 'btn btn-danger'])}}
-   {!!Form::close() !!}</td>
-   @endif
- @endif
 @endsection
