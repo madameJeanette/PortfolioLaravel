@@ -5,16 +5,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="page-header">
-                <h3>My Favorites</h3>
+                
+                <h2>Mijn favorieten</h2>
             </div>
             @forelse ($myFavorites as $myFavorite)
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{ $myFavorite->name }}
+                     <h4>   {{ $myFavorite->name }}</h4>
                     </div>
 
                     <div class="panel-body">
-                        {{ $myFavorite->picture }}
+                        <img src="\img\{{ $myFavorite->picture }}" alt="uploaded pictures" height="300" width="auto" /></td> 
                     </div>
                     @if (Auth::check())
                         <div class="panel-footer">
