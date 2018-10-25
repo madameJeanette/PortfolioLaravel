@@ -41,4 +41,4 @@ class Customer extends Authenticatable
     return $this->belongsToMany(Art::class, 'favorites', 'customer_id', 'art_id')->withTimeStamps();
      }
 
-     } 
+ } 
