@@ -26,10 +26,11 @@ Route::post('/customer/logout', 'Auth\LoginController@customerLogout')->name('cu
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
 Route::post('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
+
 Route::prefix('admin')->group(function(){
     
-    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login'); //show login form
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit'); //submit login form
     
     
 });
