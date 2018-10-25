@@ -17,7 +17,7 @@ class ArtsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin',['except'=>['index','show']]);
+        $this->middleware('auth:admin',['except'=>['index','show', 'favoriteArt', 'unFavoriteArt']]);
     }
     /**
      * Display a listing of the resource.

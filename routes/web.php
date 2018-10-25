@@ -20,20 +20,21 @@ Route::resource('arts', 'ArtsController');
 
 
 Auth::routes();
-
 Route::get('/customer', 'CustomersController@index')->name('customer.dashboard');
 Route::post('/customer/logout', 'Auth\LoginController@customerLogout')->name('customer.logout');
 
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
 Route::post('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
-
 Route::prefix('admin')->group(function(){
     
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     
+    
 });
+
+
 
 Route::post('/favorite/{art}', 'ArtsController@favoriteArt'); //posts art to favorites
 Route::post('/unfavorite/{art}', 'ArtsController@unFavoriteArt'); //posts art to unfavorites
