@@ -35,8 +35,11 @@ Route::prefix('admin')->group(function(){
     
 });
 
-Route::post('favorite/{art}', 'ArtsController@favoriteArt'); //posts art to favorites
-Route::post('unfavorite/{art}', 'ArtsController@unFavoriteArt'); //posts art to unfavorites
+Route::post('/favorite/{art}', 'ArtsController@favoriteArt'); //posts art to favorites
+Route::post('/unfavorite/{art}', 'ArtsController@unFavoriteArt'); //posts art to unfavorites
 
 Route::get('my_favorites', 'CustomersController@myFavorites')->middleware('auth'); //makes favorites list page only viewable from customer side.
+
+
+
 
