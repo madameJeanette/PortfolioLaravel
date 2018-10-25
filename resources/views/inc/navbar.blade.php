@@ -64,7 +64,7 @@
                                 @csrf
                         </form>
                         @else
-                        <a class="dropdown-item" href="{{ url('my_favorites') }}">My Favorites</a>
+                        <a class="dropdown-item" href="{{ url('my_favorites') }}">Mijn favorieten</a>
                         <a class="dropdown-item" href="{{ route('customer.dashboard')}}">Dashboard</a>  
                         <form id="logout-form" action="{{ route('customer.logout') }}" method="POST" style="display: none;">
                                 @csrf    

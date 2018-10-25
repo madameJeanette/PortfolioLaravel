@@ -12,14 +12,14 @@
 */
 
 
-Route::get('/', 'PagesController@index');
-Route::get('/about', 'PagesController@about');
-Route::get('/services', 'PagesController@services');
+Route::get('/', 'PagesController@index');    //route for general pages
+Route::get('/about', 'PagesController@about');  //route about page
+Route::get('/services', 'PagesController@services'); //route services page
 
-Route::resource('arts', 'ArtsController');
+Route::resource('arts', 'ArtsController');    //gets art controller for use in other pages
 
 
-Auth::routes();
+Auth::routes(); //authenticates routes for user roles
 Route::get('/customer', 'CustomersController@index')->name('customer.dashboard');
 Route::post('/customer/logout', 'Auth\LoginController@customerLogout')->name('customer.logout');
 
@@ -29,8 +29,8 @@ Route::post('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.log
 
 Route::prefix('admin')->group(function(){
     
-    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login'); //show login form
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit'); //submit login form
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login'); //show login form admin
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit'); //submit login form admin
     
     
 });
