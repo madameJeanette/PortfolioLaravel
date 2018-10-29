@@ -26,6 +26,9 @@ Route::post('/customer/logout', 'Auth\LoginController@customerLogout')->name('cu
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
 Route::post('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
+Route::get('/queries', 'QueryController@search');
+Route::post('queries', 'QueryController@search')->name('queries.search'); //route for searchbar queries
+
 
 Route::prefix('admin')->group(function(){
     
@@ -41,6 +44,8 @@ Route::post('/favorite/{art}', 'ArtsController@favoriteArt'); //posts art to fav
 Route::post('/unfavorite/{art}', 'ArtsController@unFavoriteArt'); //posts art to unfavorites
 
 Route::get('my_favorites', 'CustomersController@myFavorites')->middleware('auth'); //makes favorites list page only viewable from customer side.
+
+
 
 
 
