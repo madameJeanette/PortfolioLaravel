@@ -5,17 +5,15 @@
 <div class="row">
     <div class="col-md-6">
 
-        Filter:
-        <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'asc'])}}">Newest</a>        |
-        <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'desc'])}}">Oldest</a>        |
-        <a href="/">Reset</a> |
 
     </div>
     <div class="col-md-6">
         Sort:
-        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'asc'])}}">Ascending</a> |
-        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'desc'])}}">Descending</a> |
-
+        
+        <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'asc'])}}">Oudste</a>  |
+        <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'desc'])}}">Nieuwste</a>  |
+        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'asc'])}}">A-Z</a> |
+        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'desc'])}}">Z-A</a> |
     </div>
 </div>
 
@@ -27,9 +25,13 @@
         <h3>{{$art->name}}</h3>
     </td>
     <td> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="200" width="auto" /></td>
-    <hr>
+    <br>
     <small> geupload: {{$art->created_at}} door {{$art->user->name}}</small>
-    <hr>
+    
 </tr>
-@endforeach @endif
+
+@endforeach
+
+@endif
+{{$arts->links()}}
 @endsection
