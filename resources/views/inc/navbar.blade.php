@@ -26,10 +26,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/services">Services</a>
                 </li>
+                <li>
+                            
+                            {!! Form::open(['action' => 'QueryController@search', 'class'=>'form navbar-form navbar-right searchform']) !!}
+                            {!! Form::text('search', null,
+                                                   array('required',
+                                                        'class'=>'form-control',
+                                                        'placeholder'=>'Zoek naar recente werken...')) !!}
+                            
+                         
+                        {!! Form::close() !!}
+
+
+                </li>
+
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-           
 
                 <!-- Authentication Links -->
                 @guest
@@ -40,10 +53,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
-                
+                @if(Auth::guard('admin')->check())
                 <li> <a class="nav-link" href="{{  route('admin.dashboard')}}">Admin Dashboard</a></li>
-                
-                      
+                @endif
+
                 @else
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -51,27 +64,25 @@
                           {{ Auth::user()->name }} <span class="caret"></span>
                        
                     </a>
-                    
+
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                               {{ __('Logout') }}
-                        </a>
-                       
-                        @if(Auth::guard('admin')->check()) 
-                        
+                        </a> @if(Auth::guard('admin')->check())
+
                         <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-                                @csrf
+                            @csrf
                         </form>
                         @else
                         <a class="dropdown-item" href="{{ url('my_favorites') }}">Mijn favorieten</a>
-                        <a class="dropdown-item" href="{{ route('customer.dashboard')}}">Dashboard</a>  
+                        <a class="dropdown-item" href="{{ route('customer.dashboard')}}">Dashboard</a>
                         <form id="logout-form" action="{{ route('customer.logout') }}" method="POST" style="display: none;">
-                                @csrf    
-                        </form>               
+                            @csrf
+                        </form>
                         @endif
-                        
-                          </div>
+
+                    </div>
                 </li>
                 @endguest
             </ul>
