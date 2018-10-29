@@ -27,8 +27,8 @@ Route::get('/home', 'HomeController@index')->name('admin.dashboard');
 Route::post('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
 Route::get('/queries', 'QueryController@search');
-Route::post('queries', 'QueryController@search')->name('queries.search'); //route for searchbar queries
-
+Route::post('/queries', 'QueryController@search')->name('queries.search'); //route for searchbar queries
+Route::get('/queries', 'QueryController@index')->name('queries.index');//route for filter function
 
 Route::prefix('admin')->group(function(){
     

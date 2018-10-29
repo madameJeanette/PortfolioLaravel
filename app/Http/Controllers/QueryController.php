@@ -6,7 +6,29 @@ use Illuminate\Http\Request;
 use App\Art;
 
 class QueryController extends Controller
+
 {
+    public function index(Request $request)
+    {
+        $arts = new Art;
+        if (request()->has('created_at')){ 
+            $arts = $arts->orderBy('created_at', request('created_at'));//order by upload time
+            //sort result by timestamp
+        }
+        if (request()->has('sort')){
+          $arts = $arts->orderBy('name', request('sort')); //order by alphabet
+          //sort result by name
+        }
+       
+      $arts = $arts->paginate(5)->appends([    //combines the filters
+        'created_at' => request('created_at'),
+        'sort' => request('sort'),
+       ]);
+
+       return view('art.search', compact('arts'));
+
+
+    }
     public function search(Request $request)
     {
       
@@ -19,5 +41,6 @@ class QueryController extends Controller
          // returns a view and passes the view the list of art and the original query.
          return view('art.search')->with('arts', $arts);
         
+
    } 
 }
