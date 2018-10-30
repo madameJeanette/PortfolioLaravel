@@ -8,12 +8,23 @@
 
     </div>
     <div class="col-md-6">
+        {{ Form::open(['action' => 'QueryController@index', 'method' => 'POST']) }}
         Sort:
         
-        <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'asc'])}}">Oudste</a>  |
+       {!! Form::select('filterOptions', array('created_desc' => 'nieuwste', 
+       'created_asc' => 'oudste',
+       'name_asc' => 'A-Z',
+       'name_desc' => 'Z-A'
+       )); !!}
+       
+        {{-- <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'asc'])}}">Oudste</a>  |
         <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'desc'])}}">Nieuwste</a>  |
         <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'asc'])}}">A-Z</a> |
-        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'desc'])}}">Z-A</a> |
+        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'desc'])}}">Z-A</a> | --}}
+        <button>Submit</button>
+        {{ Form::close() }}  
+        
+        
     </div>
 </div>
 
@@ -30,8 +41,9 @@
     
 </tr>
 
+
 @endforeach
 
 @endif
-{{$arts->links()}}
+
 @endsection

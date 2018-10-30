@@ -27,18 +27,35 @@ class QueryController extends Controller
  public function index(Request $request)
  {
         $arts = new Art;
-             
-        if (request()->has('created_at')){ 
-            $arts = $arts->orderBy('created_at', request('created_at'));//order by upload time
-            //sort result by timestamp
-        }
-        if (request()->has('sort')){
-          $arts = $arts->orderBy('name', request('sort')); //order by alphabet
-          //sort result by name
-        }
+
        
-        $arts = $arts->paginate(3)->appends([    //combines the filters
-        'user_id' => request('user_id'),
+
+       switch($request->input('filterOptions')){
+         case "created_asc":
+          $arts = $arts->orderBy('created_at', 'ASC');//order by upload time
+          break;
+          case "created_desc":
+          $arts = $arts->orderBy('created_at', 'DESC');//order by upload time
+          break;
+          case "name_asc":
+          $arts = $arts->orderBy('name', 'ASC');//order by upload time
+          break;
+          case "name_desc":
+          $arts = $arts->orderBy('name', 'DESC');//order by upload time
+          break;
+       }
+             
+        // if (request()->has('created_at')){ 
+        //     $arts = $arts->orderBy('created_at', request('created_at'));//order by upload time
+        //     //sort result by timestamp
+        // }
+        // if (request()->has('sort')){
+        //   $arts = $arts->orderBy('name', request('sort')); //order by alphabet
+        //   //sort result by name
+        // }
+       
+        $arts = $arts->paginate(5)->appends([    //combines the filters
+        
         'created_at' => request('created_at'),
         'sort' => request('sort'),
         ]);
