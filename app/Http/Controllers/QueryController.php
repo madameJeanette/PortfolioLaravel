@@ -38,19 +38,15 @@ class QueryController extends Controller
           $arts = $arts->orderBy('created_at', 'DESC');//order by upload time
           break;
           case "name_asc":
-          $arts = $arts->orderBy('name', 'ASC');//order by upload time
+          $arts = $arts->orderBy('name', 'ASC');//order by name
           break;
           case "name_desc":
-          $arts = $arts->orderBy('name', 'DESC');//order by upload time
+          $arts = $arts->orderBy('name', 'DESC');//order by name
           break;
        }
              
             
-      //  $arts = $arts->paginate(5)->appends([    //combines the filters
-        
-      //  'created_at' => request('created_at'),
-     //   'sort' => request('sort'),
-      //  ]);
+        $arts = $arts->paginate(5);
 
         return view('art.search', compact('arts'));
 

@@ -8,20 +8,17 @@
 
     </div>
     <div class="col-md-6">
-        {{ Form::open(['action' => 'QueryController@index', 'method' => 'POST']) }}
-        Sort:
-        
-       {!! Form::select('filterOptions', array('created_desc' => 'nieuwste', 
-       'created_asc' => 'oudste',
-       'name_asc' => 'A-Z',
-       'name_desc' => 'Z-A'
-       )); !!}
-       
-        
-        <button>Submit</button>
-        {{ Form::close() }}  
-        
-        
+        {{ Form::open(['action' => 'QueryController@index', 'method' => 'POST']) }} <!-- Form for dropdown filter-->
+         Filter: 
+         {!! Form::select('filterOptions',array(
+           'created_desc'=> 'nieuwste',       //calls newest post by filtering created at by descending
+           'created_asc' => 'oudste',          //calls oldest post by filtering created at by ascending
+           'name_asc' => 'A-Z',                //calls posts A-Z by filtering name by ascending
+           'name_desc' => 'Z-A'                //calls post Z-A by filtering name by descending
+         )); !!}
+
+
+        <button>Submit</button> {{ Form::close() }}  
     </div>
 </div>
 
@@ -35,12 +32,9 @@
     <td> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="200" width="auto" /></td>
     <br>
     <small> geupload: {{$art->created_at}} door {{$art->user->name}}</small>
-    
+
 </tr>
 
 
-@endforeach
-
-@endif
-
+@endforeach @endif
 @endsection
