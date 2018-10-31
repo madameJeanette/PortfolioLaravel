@@ -17,10 +17,7 @@
        'name_desc' => 'Z-A'
        )); !!}
        
-        {{-- <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'asc'])}}">Oudste</a>  |
-        <a href="{{ route('queries.index', ['created_at' => request('created_at'), 'created_at' =>  'desc'])}}">Nieuwste</a>  |
-        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'asc'])}}">A-Z</a> |
-        <a href="{{ route('queries.index', ['name' => request('name'), 'sort' =>  'desc'])}}">Z-A</a> | --}}
+        
         <button>Submit</button>
         {{ Form::close() }}  
         

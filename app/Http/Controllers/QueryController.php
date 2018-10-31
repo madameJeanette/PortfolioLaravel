@@ -45,20 +45,12 @@ class QueryController extends Controller
           break;
        }
              
-        // if (request()->has('created_at')){ 
-        //     $arts = $arts->orderBy('created_at', request('created_at'));//order by upload time
-        //     //sort result by timestamp
-        // }
-        // if (request()->has('sort')){
-        //   $arts = $arts->orderBy('name', request('sort')); //order by alphabet
-        //   //sort result by name
-        // }
-       
-        $arts = $arts->paginate(5)->appends([    //combines the filters
+            
+      //  $arts = $arts->paginate(5)->appends([    //combines the filters
         
-        'created_at' => request('created_at'),
-        'sort' => request('sort'),
-        ]);
+      //  'created_at' => request('created_at'),
+     //   'sort' => request('sort'),
+      //  ]);
 
         return view('art.search', compact('arts'));
 
