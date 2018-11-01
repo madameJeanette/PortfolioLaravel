@@ -31,23 +31,17 @@ class QueryController extends Controller
        
 
        switch($request->input('filterOptions')){
-         case "created_asc":
-          $arts = $arts->orderBy('created_at', 'ASC');//order by upload time
+          case "taart":                            //filer on pie
+          $arts = Art::where('picture', 'like', '%' . $request->input('filterOptions') . '%')->orWhere('name', 'like', '%' . $request->input('filterOptions') . '%')->get();
           break;
-          case "created_desc":
-          $arts = $arts->orderBy('created_at', 'DESC');//order by upload time
+          case "panda":                           //filter on panda
+          $arts = Art::where('picture', 'like', '%' . $request->input('filterOptions') . '%')->orWhere('name', 'like', '%' . $request->input('filterOptions') . '%')->get();
           break;
-          case "name_asc":
-          $arts = $arts->orderBy('name', 'ASC');//order by name
-          break;
-          case "name_desc":
-          $arts = $arts->orderBy('name', 'DESC');//order by name
-          break;
+         
+          
        }
-             
-            
-        $arts = $arts->paginate(5);
 
+           
         return view('art.search', compact('arts'));
 
  }

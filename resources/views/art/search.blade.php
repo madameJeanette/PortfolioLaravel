@@ -3,24 +3,21 @@
 <h1> Zoek resultaten </h1>
 
 <div class="row">
-    <div class="col-md-6">
-
-
-    </div>
+  
+</div>
     <div class="col-md-6">
         {{ Form::open(['action' => 'QueryController@index', 'method' => 'POST']) }} <!-- Form for dropdown filter-->
          Filter: 
          {!! Form::select('filterOptions',array(
-           'created_desc'=> 'nieuwste',       //calls newest post by filtering created at by descending
-           'created_asc' => 'oudste',          //calls oldest post by filtering created at by ascending
-           'name_asc' => 'A-Z',                //calls posts A-Z by filtering name by ascending
-           'name_desc' => 'Z-A'                //calls post Z-A by filtering name by descending
+           'taart' => 'Taarten' ,             //filter on pies
+           'panda' => "Panda's" ,             //filter on panda.
+          
          )); !!}
 
 
         <button>Submit</button> {{ Form::close() }}  
     </div>
-</div>
+
 
 <hr> @if (count($arts) === 0)
 <p>Geen afbeeldingen gevonden die voldoen aan de zoek term.</p>
@@ -36,5 +33,7 @@
 </tr>
 
 
-@endforeach @endif
+@endforeach 
+
+@endif
 @endsection
