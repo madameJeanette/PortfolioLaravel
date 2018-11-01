@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserLoginTimeAndTimes extends Migration
+class LoginTimestampsForUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddUserLoginTimeAndTimes extends Migration
      */
     public function up()
     {
-        Schema::table('customers', function($table){
+        Schema::table('users', function($table){
             $table->timestamp('login_latest')->nullable();
             $table->integer('login_times');
                    
