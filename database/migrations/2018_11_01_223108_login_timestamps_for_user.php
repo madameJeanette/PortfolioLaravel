@@ -15,7 +15,7 @@ class LoginTimestampsForUser extends Migration
     {
         Schema::table('users', function($table){
             $table->timestamp('login_latest')->nullable();
-            $table->integer('login_times');
+            $table->integer('login_times')->nullable();
                    
             });
     }

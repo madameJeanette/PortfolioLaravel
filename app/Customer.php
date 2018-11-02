@@ -36,9 +36,12 @@ class Customer extends Authenticatable
     /**
      * Get all of favorite Art for the user.
      */
+    
      public function favorites()
      {
+      
     return $this->belongsToMany(Art::class, 'favorites', 'customer_id', 'art_id')->withTimeStamps();
-     }
-
+      
+    }
+    
  } 

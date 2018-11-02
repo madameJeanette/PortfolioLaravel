@@ -26,7 +26,7 @@ Route::post('/customer/logout', 'Auth\LoginController@customerLogout')->name('cu
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
 Route::post('/home/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
-//Route::get('/search', 'QueryController@search');
+
 Route::post('/search', 'QueryController@search')->name('queries.search'); //route for searchbar queries
 Route::get('/filter', 'QueryController@index');//route for filter function
 Route::post('/filter', 'QueryController@index')->name('queries.index'); //route for filter function

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Art;
+use App\Customer;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -146,25 +147,33 @@ class ArtsController extends Controller
     * @param  Art $art
     * @return Response
     */
-    public function favoriteArt(Art $art)
-   {
+    
+ 
+    public function favoriteArt(Art $art, Customer $customer )
+    {
+    if( Auth::user()->login_times >= 4){
     Auth::user()->favorites()->attach($art->id);
 
     return back();
-  } 
-
-   /**
+     }
+    }
+    
+    
+     /**
    * Unfavorite particular art
    *
    * @param  Art $art
    * @return Response
     */
-  public function unFavoriteArt(Art $art)
+  public function unFavoriteArt(Art $art, Customer $customer)
   {
-    Auth::user()->favorites()->detach($art->id);
+    if( Auth::user()->login_times >= 4){
+      Auth::user()->favorites()->detach($art->id);
 
-    return back();
- }
-
-
+      return back();
+    }
+  }
+    
 }
+
+

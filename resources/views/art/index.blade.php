@@ -11,7 +11,7 @@
   <small> geupload: {{$art->created_at}} door {{$art->user->name}}</small>
   
  </div>
- @if (Auth::check())
+ @if (Auth::check()&& Auth::user()->login_times >= 4)
     <div class="panel-footer">
         <favorite
             :art={{ $art->id }}

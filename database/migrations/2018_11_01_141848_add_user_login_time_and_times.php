@@ -15,7 +15,7 @@ class AddUserLoginTimeAndTimes extends Migration
     {
         Schema::table('customers', function($table){
             $table->timestamp('login_latest')->nullable();
-            $table->integer('login_times');
+            $table->integer('login_times')->nullable();
                    
             });
     }
