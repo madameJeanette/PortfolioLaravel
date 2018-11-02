@@ -7,7 +7,7 @@
                 <div class="card-header">ADMIN Dashboard</div>
 
                 <div class="card-body">
-                    @component ('components.who') @endcomponent @if (session('status'))
+                    @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>

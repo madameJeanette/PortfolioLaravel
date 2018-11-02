@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
                                 <div class="panel">
-                                    @component ('components.who') @endcomponent
+                                   
                                     <p> U bent ingelogt als klant. </p>
                                     <p> Laatste login {{auth()->user()->login_latest}} </p>
                                 </div>
