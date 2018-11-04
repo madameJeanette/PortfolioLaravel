@@ -27,7 +27,7 @@ class LoginCustomerCount
     public function handle(Login $event)
     {
         $event->user->login_latest = Carbon::now(); //set login in time to now
-        $event->user->login_times++;
-        $event->user->save();
+        $event->user->login_times++;  //add 1 when logged in
+        $event->user->save();    //save to db
     }
 }

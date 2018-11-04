@@ -27,7 +27,8 @@
                             <td> <img src="\img\{{$art->picture}}" alt="uploaded pictures" height="100" width="auto" /></td>
                             <td><a href="/arts/{{$art->id}}/edit" class='btn btn-default'>Edit</a></td>
                             <td>
-                                {!!Form::open(['action'=> ['ArtsController@destroy',$art->id],'method'=>'POST'])!!} {{Form::hidden('_method', 'DELETE')}}
+                                {!!Form::open(['action'=> ['ArtsController@destroy',$art->id],'method'=>'POST'])!!} <!--Delete post w hidden field --->
+                                {{Form::hidden('_method', 'DELETE')}}
                                 {{Form::submit('Delete', ['class'=> 'btn btn-danger'])}} {!!Form::close() !!}</td>
 
                         </tr>
